@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title size="large">CALCULADORA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">X (mm)</ion-label>
+    <ion-input type="number" [(ngModel)]="x"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Y (mm)</ion-label>
+    <ion-input type="number" [(ngModel)]="y"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="calcular()">Calcular</ion-button>
+  <ion-button expand="full" color="light" (click)="limpiar()">Limpiar</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let resultado of resultados">
+      <ion-label>{{ resultado.nombre }}: {{ resultado.valor }} mm</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
